@@ -50,3 +50,10 @@ class Snake:
         tim.penup()
         tim.color("white")
         self.all_box.append(tim)
+
+    def reset(self):
+        for seg in self.all_box:
+            seg.goto(x=1000, y=1000)
+        self.all_box.clear()
+        self.create_snake()
+        self.head=self.all_box[0]

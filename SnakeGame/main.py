@@ -32,13 +32,13 @@ while game_is_on:
     segsnake.move()
 
     if segsnake.head.xcor() >290 or segsnake.head.xcor() < -290 or segsnake.head.ycor() >290 or segsnake.head.ycor() <-290:
-        game_is_on = 0
-        scoreboard.gameover()
+        scoreboard.reset()
+        segsnake.reset()
 
     for segment in segsnake.all_box[1:]:
         if segsnake.head.distance(segment) < 10:
-            game_is_on = 0
-            scoreboard.gameover()
+            scoreboard.reset()
+            segsnake.reset()
         
 
 screen.exitonclick()
